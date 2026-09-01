@@ -1,0 +1,882 @@
+{
+  "version": 1,
+  "generado": "2026-09-01",
+  "requisitos": [
+    {
+      "id": "nac-spain",
+      "tipo": "nacionalidad",
+      "valor": "Spain",
+      "etiqueta": "Spain"
+    },
+    {
+      "id": "nac-france",
+      "tipo": "nacionalidad",
+      "valor": "France",
+      "etiqueta": "France"
+    },
+    {
+      "id": "nac-england",
+      "tipo": "nacionalidad",
+      "valor": "England",
+      "etiqueta": "England"
+    },
+    {
+      "id": "nac-netherlands",
+      "tipo": "nacionalidad",
+      "valor": "Netherlands",
+      "etiqueta": "Netherlands"
+    },
+    {
+      "id": "nac-cameroon",
+      "tipo": "nacionalidad",
+      "valor": "Cameroon",
+      "etiqueta": "Cameroon"
+    },
+    {
+      "id": "nac-brazil",
+      "tipo": "nacionalidad",
+      "valor": "Brazil",
+      "etiqueta": "Brazil"
+    },
+    {
+      "id": "nac-ecuador",
+      "tipo": "nacionalidad",
+      "valor": "Ecuador",
+      "etiqueta": "Ecuador"
+    },
+    {
+      "id": "nac-colombia",
+      "tipo": "nacionalidad",
+      "valor": "Colombia",
+      "etiqueta": "Colombia"
+    },
+    {
+      "id": "nac-italy",
+      "tipo": "nacionalidad",
+      "valor": "Italy",
+      "etiqueta": "Italy"
+    },
+    {
+      "id": "nac-ireland",
+      "tipo": "nacionalidad",
+      "valor": "Ireland",
+      "etiqueta": "Ireland"
+    },
+    {
+      "id": "nac-norway",
+      "tipo": "nacionalidad",
+      "valor": "Norway",
+      "etiqueta": "Norway"
+    },
+    {
+      "id": "nac-nigeria",
+      "tipo": "nacionalidad",
+      "valor": "Nigeria",
+      "etiqueta": "Nigeria"
+    },
+    {
+      "id": "nac-portugal",
+      "tipo": "nacionalidad",
+      "valor": "Portugal",
+      "etiqueta": "Portugal"
+    },
+    {
+      "id": "nac-greece",
+      "tipo": "nacionalidad",
+      "valor": "Greece",
+      "etiqueta": "Greece"
+    },
+    {
+      "id": "nac-jamaica",
+      "tipo": "nacionalidad",
+      "valor": "Jamaica",
+      "etiqueta": "Jamaica"
+    },
+    {
+      "id": "nac-argentina",
+      "tipo": "nacionalidad",
+      "valor": "Argentina",
+      "etiqueta": "Argentina"
+    },
+    {
+      "id": "nac-dr-congo",
+      "tipo": "nacionalidad",
+      "valor": "DR Congo",
+      "etiqueta": "DR Congo"
+    },
+    {
+      "id": "nac-senegal",
+      "tipo": "nacionalidad",
+      "valor": "Senegal",
+      "etiqueta": "Senegal"
+    },
+    {
+      "id": "nac-sweden",
+      "tipo": "nacionalidad",
+      "valor": "Sweden",
+      "etiqueta": "Sweden"
+    },
+    {
+      "id": "nac-poland",
+      "tipo": "nacionalidad",
+      "valor": "Poland",
+      "etiqueta": "Poland"
+    },
+    {
+      "id": "nac-serbia",
+      "tipo": "nacionalidad",
+      "valor": "Serbia",
+      "etiqueta": "Serbia"
+    },
+    {
+      "id": "nac-belgium",
+      "tipo": "nacionalidad",
+      "valor": "Belgium",
+      "etiqueta": "Belgium"
+    },
+    {
+      "id": "nac-scotland",
+      "tipo": "nacionalidad",
+      "valor": "Scotland",
+      "etiqueta": "Scotland"
+    },
+    {
+      "id": "nac-switzerland",
+      "tipo": "nacionalidad",
+      "valor": "Switzerland",
+      "etiqueta": "Switzerland"
+    },
+    {
+      "id": "nac-united-states",
+      "tipo": "nacionalidad",
+      "valor": "United States",
+      "etiqueta": "United States"
+    },
+    {
+      "id": "nac-paraguay",
+      "tipo": "nacionalidad",
+      "valor": "Paraguay",
+      "etiqueta": "Paraguay"
+    },
+    {
+      "id": "nac-hungary",
+      "tipo": "nacionalidad",
+      "valor": "Hungary",
+      "etiqueta": "Hungary"
+    },
+    {
+      "id": "nac-morocco",
+      "tipo": "nacionalidad",
+      "valor": "Morocco",
+      "etiqueta": "Morocco"
+    },
+    {
+      "id": "nac-wales",
+      "tipo": "nacionalidad",
+      "valor": "Wales",
+      "etiqueta": "Wales"
+    },
+    {
+      "id": "nac-austria",
+      "tipo": "nacionalidad",
+      "valor": "Austria",
+      "etiqueta": "Austria"
+    },
+    {
+      "id": "nac-germany",
+      "tipo": "nacionalidad",
+      "valor": "Germany",
+      "etiqueta": "Germany"
+    },
+    {
+      "id": "nac-turkiye",
+      "tipo": "nacionalidad",
+      "valor": "Türkiye",
+      "etiqueta": "Türkiye"
+    },
+    {
+      "id": "nac-mali",
+      "tipo": "nacionalidad",
+      "valor": "Mali",
+      "etiqueta": "Mali"
+    },
+    {
+      "id": "nac-denmark",
+      "tipo": "nacionalidad",
+      "valor": "Denmark",
+      "etiqueta": "Denmark"
+    },
+    {
+      "id": "nac-angola",
+      "tipo": "nacionalidad",
+      "valor": "Angola",
+      "etiqueta": "Angola"
+    },
+    {
+      "id": "nac-croatia",
+      "tipo": "nacionalidad",
+      "valor": "Croatia",
+      "etiqueta": "Croatia"
+    },
+    {
+      "id": "nac-cote-d-ivoire",
+      "tipo": "nacionalidad",
+      "valor": "Cote d'Ivoire",
+      "etiqueta": "Cote d'Ivoire"
+    },
+    {
+      "id": "nac-japan",
+      "tipo": "nacionalidad",
+      "valor": "Japan",
+      "etiqueta": "Japan"
+    },
+    {
+      "id": "nac-ghana",
+      "tipo": "nacionalidad",
+      "valor": "Ghana",
+      "etiqueta": "Ghana"
+    },
+    {
+      "id": "nac-the-gambia",
+      "tipo": "nacionalidad",
+      "valor": "The Gambia",
+      "etiqueta": "The Gambia"
+    },
+    {
+      "id": "nac-northern-ireland",
+      "tipo": "nacionalidad",
+      "valor": "Northern Ireland",
+      "etiqueta": "Northern Ireland"
+    },
+    {
+      "id": "nac-algeria",
+      "tipo": "nacionalidad",
+      "valor": "Algeria",
+      "etiqueta": "Algeria"
+    },
+    {
+      "id": "nac-czech-republic",
+      "tipo": "nacionalidad",
+      "valor": "Czech Republic",
+      "etiqueta": "Czech Republic"
+    },
+    {
+      "id": "nac-uruguay",
+      "tipo": "nacionalidad",
+      "valor": "Uruguay",
+      "etiqueta": "Uruguay"
+    },
+    {
+      "id": "nac-guinea",
+      "tipo": "nacionalidad",
+      "valor": "Guinea",
+      "etiqueta": "Guinea"
+    },
+    {
+      "id": "club-arsenal-fc",
+      "tipo": "club",
+      "valor": "Arsenal FC",
+      "etiqueta": "Arsenal FC"
+    },
+    {
+      "id": "club-aston-villa",
+      "tipo": "club",
+      "valor": "Aston Villa",
+      "etiqueta": "Aston Villa"
+    },
+    {
+      "id": "club-afc-bournemouth",
+      "tipo": "club",
+      "valor": "AFC Bournemouth",
+      "etiqueta": "AFC Bournemouth"
+    },
+    {
+      "id": "club-brentford-fc",
+      "tipo": "club",
+      "valor": "Brentford FC",
+      "etiqueta": "Brentford FC"
+    },
+    {
+      "id": "club-brighton-hove-albion",
+      "tipo": "club",
+      "valor": "Brighton & Hove Albion",
+      "etiqueta": "Brighton & Hove Albion"
+    },
+    {
+      "id": "club-chelsea-fc",
+      "tipo": "club",
+      "valor": "Chelsea FC",
+      "etiqueta": "Chelsea FC"
+    },
+    {
+      "id": "club-crystal-palace",
+      "tipo": "club",
+      "valor": "Crystal Palace",
+      "etiqueta": "Crystal Palace"
+    },
+    {
+      "id": "club-everton-fc",
+      "tipo": "club",
+      "valor": "Everton FC",
+      "etiqueta": "Everton FC"
+    },
+    {
+      "id": "club-fulham-fc",
+      "tipo": "club",
+      "valor": "Fulham FC",
+      "etiqueta": "Fulham FC"
+    },
+    {
+      "id": "club-leeds-united",
+      "tipo": "club",
+      "valor": "Leeds United",
+      "etiqueta": "Leeds United"
+    },
+    {
+      "id": "club-liverpool-fc",
+      "tipo": "club",
+      "valor": "Liverpool FC",
+      "etiqueta": "Liverpool FC"
+    },
+    {
+      "id": "club-manchester-city",
+      "tipo": "club",
+      "valor": "Manchester City",
+      "etiqueta": "Manchester City"
+    },
+    {
+      "id": "club-manchester-united",
+      "tipo": "club",
+      "valor": "Manchester United",
+      "etiqueta": "Manchester United"
+    },
+    {
+      "id": "club-newcastle-united",
+      "tipo": "club",
+      "valor": "Newcastle United",
+      "etiqueta": "Newcastle United"
+    },
+    {
+      "id": "club-nottingham-forest",
+      "tipo": "club",
+      "valor": "Nottingham Forest",
+      "etiqueta": "Nottingham Forest"
+    },
+    {
+      "id": "club-tottenham-hotspur",
+      "tipo": "club",
+      "valor": "Tottenham Hotspur",
+      "etiqueta": "Tottenham Hotspur"
+    },
+    {
+      "id": "club-west-ham-united",
+      "tipo": "club",
+      "valor": "West Ham United",
+      "etiqueta": "West Ham United"
+    },
+    {
+      "id": "club-wolverhampton-wanderers",
+      "tipo": "club",
+      "valor": "Wolverhampton Wanderers",
+      "etiqueta": "Wolverhampton Wanderers"
+    },
+    {
+      "id": "club-blackburn-rovers",
+      "tipo": "club",
+      "valor": "Blackburn Rovers",
+      "etiqueta": "Blackburn Rovers"
+    },
+    {
+      "id": "club-ipswich-town",
+      "tipo": "club",
+      "valor": "Ipswich Town",
+      "etiqueta": "Ipswich Town"
+    },
+    {
+      "id": "club-fc-barcelona",
+      "tipo": "club",
+      "valor": "FC Barcelona",
+      "etiqueta": "FC Barcelona"
+    },
+    {
+      "id": "club-real-madrid",
+      "tipo": "club",
+      "valor": "Real Madrid",
+      "etiqueta": "Real Madrid"
+    },
+    {
+      "id": "club-atletico-madrid",
+      "tipo": "club",
+      "valor": "Atlético Madrid",
+      "etiqueta": "Atlético Madrid"
+    },
+    {
+      "id": "club-athletic-bilbao",
+      "tipo": "club",
+      "valor": "Athletic Bilbao",
+      "etiqueta": "Athletic Bilbao"
+    },
+    {
+      "id": "club-real-sociedad",
+      "tipo": "club",
+      "valor": "Real Sociedad",
+      "etiqueta": "Real Sociedad"
+    },
+    {
+      "id": "club-villarreal-cf",
+      "tipo": "club",
+      "valor": "Villarreal CF",
+      "etiqueta": "Villarreal CF"
+    },
+    {
+      "id": "club-real-betis-balompie",
+      "tipo": "club",
+      "valor": "Real Betis Balompié",
+      "etiqueta": "Real Betis Balompié"
+    },
+    {
+      "id": "club-sevilla-fc",
+      "tipo": "club",
+      "valor": "Sevilla FC",
+      "etiqueta": "Sevilla FC"
+    },
+    {
+      "id": "club-valencia-cf",
+      "tipo": "club",
+      "valor": "Valencia CF",
+      "etiqueta": "Valencia CF"
+    },
+    {
+      "id": "club-girona-fc",
+      "tipo": "club",
+      "valor": "Girona FC",
+      "etiqueta": "Girona FC"
+    },
+    {
+      "id": "club-ca-osasuna",
+      "tipo": "club",
+      "valor": "CA Osasuna",
+      "etiqueta": "CA Osasuna"
+    },
+    {
+      "id": "club-getafe-cf",
+      "tipo": "club",
+      "valor": "Getafe CF",
+      "etiqueta": "Getafe CF"
+    },
+    {
+      "id": "club-rcd-mallorca",
+      "tipo": "club",
+      "valor": "RCD Mallorca",
+      "etiqueta": "RCD Mallorca"
+    },
+    {
+      "id": "club-celta-de-vigo",
+      "tipo": "club",
+      "valor": "Celta de Vigo",
+      "etiqueta": "Celta de Vigo"
+    },
+    {
+      "id": "club-cd-leganes",
+      "tipo": "club",
+      "valor": "CD Leganés",
+      "etiqueta": "CD Leganés"
+    },
+    {
+      "id": "club-rcd-espanyol-barcelona",
+      "tipo": "club",
+      "valor": "RCD Espanyol Barcelona",
+      "etiqueta": "RCD Espanyol Barcelona"
+    },
+    {
+      "id": "club-rayo-vallecano",
+      "tipo": "club",
+      "valor": "Rayo Vallecano",
+      "etiqueta": "Rayo Vallecano"
+    },
+    {
+      "id": "club-deportivo-alaves",
+      "tipo": "club",
+      "valor": "Deportivo Alavés",
+      "etiqueta": "Deportivo Alavés"
+    },
+    {
+      "id": "club-real-valladolid-cf",
+      "tipo": "club",
+      "valor": "Real Valladolid CF",
+      "etiqueta": "Real Valladolid CF"
+    },
+    {
+      "id": "club-ud-las-palmas",
+      "tipo": "club",
+      "valor": "UD Las Palmas",
+      "etiqueta": "UD Las Palmas"
+    },
+    {
+      "id": "club-inter-milan",
+      "tipo": "club",
+      "valor": "Inter Milan",
+      "etiqueta": "Inter Milan"
+    },
+    {
+      "id": "club-ac-milan",
+      "tipo": "club",
+      "valor": "AC Milan",
+      "etiqueta": "AC Milan"
+    },
+    {
+      "id": "club-juventus-fc",
+      "tipo": "club",
+      "valor": "Juventus FC",
+      "etiqueta": "Juventus FC"
+    },
+    {
+      "id": "club-ssc-napoli",
+      "tipo": "club",
+      "valor": "SSC Napoli",
+      "etiqueta": "SSC Napoli"
+    },
+    {
+      "id": "club-as-roma",
+      "tipo": "club",
+      "valor": "AS Roma",
+      "etiqueta": "AS Roma"
+    },
+    {
+      "id": "club-ss-lazio",
+      "tipo": "club",
+      "valor": "SS Lazio",
+      "etiqueta": "SS Lazio"
+    },
+    {
+      "id": "club-atalanta-bc",
+      "tipo": "club",
+      "valor": "Atalanta BC",
+      "etiqueta": "Atalanta BC"
+    },
+    {
+      "id": "club-acf-fiorentina",
+      "tipo": "club",
+      "valor": "ACF Fiorentina",
+      "etiqueta": "ACF Fiorentina"
+    },
+    {
+      "id": "club-bologna-fc-1909",
+      "tipo": "club",
+      "valor": "Bologna FC 1909",
+      "etiqueta": "Bologna FC 1909"
+    },
+    {
+      "id": "club-torino-fc",
+      "tipo": "club",
+      "valor": "Torino FC",
+      "etiqueta": "Torino FC"
+    },
+    {
+      "id": "club-udinese-calcio",
+      "tipo": "club",
+      "valor": "Udinese Calcio",
+      "etiqueta": "Udinese Calcio"
+    },
+    {
+      "id": "club-genoa-cfc",
+      "tipo": "club",
+      "valor": "Genoa CFC",
+      "etiqueta": "Genoa CFC"
+    },
+    {
+      "id": "club-hellas-verona",
+      "tipo": "club",
+      "valor": "Hellas Verona",
+      "etiqueta": "Hellas Verona"
+    },
+    {
+      "id": "club-cagliari",
+      "tipo": "club",
+      "valor": "Cagliari",
+      "etiqueta": "Cagliari"
+    },
+    {
+      "id": "club-parma",
+      "tipo": "club",
+      "valor": "Parma",
+      "etiqueta": "Parma"
+    },
+    {
+      "id": "club-lecce",
+      "tipo": "club",
+      "valor": "Lecce",
+      "etiqueta": "Lecce"
+    },
+    {
+      "id": "club-empoli-fc",
+      "tipo": "club",
+      "valor": "Empoli FC",
+      "etiqueta": "Empoli FC"
+    },
+    {
+      "id": "club-como",
+      "tipo": "club",
+      "valor": "Como",
+      "etiqueta": "Como"
+    },
+    {
+      "id": "club-venezia",
+      "tipo": "club",
+      "valor": "Venezia",
+      "etiqueta": "Venezia"
+    },
+    {
+      "id": "club-pisa",
+      "tipo": "club",
+      "valor": "Pisa",
+      "etiqueta": "Pisa"
+    },
+    {
+      "id": "club-bayern-munich",
+      "tipo": "club",
+      "valor": "Bayern Munich",
+      "etiqueta": "Bayern Munich"
+    },
+    {
+      "id": "club-borussia-dortmund",
+      "tipo": "club",
+      "valor": "Borussia Dortmund",
+      "etiqueta": "Borussia Dortmund"
+    },
+    {
+      "id": "club-rb-leipzig",
+      "tipo": "club",
+      "valor": "RB Leipzig",
+      "etiqueta": "RB Leipzig"
+    },
+    {
+      "id": "club-bayer-04-leverkusen",
+      "tipo": "club",
+      "valor": "Bayer 04 Leverkusen",
+      "etiqueta": "Bayer 04 Leverkusen"
+    },
+    {
+      "id": "club-vfb-stuttgart",
+      "tipo": "club",
+      "valor": "VfB Stuttgart",
+      "etiqueta": "VfB Stuttgart"
+    },
+    {
+      "id": "club-eintracht-frankfurt",
+      "tipo": "club",
+      "valor": "Eintracht Frankfurt",
+      "etiqueta": "Eintracht Frankfurt"
+    },
+    {
+      "id": "club-sc-freiburg",
+      "tipo": "club",
+      "valor": "SC Freiburg",
+      "etiqueta": "SC Freiburg"
+    },
+    {
+      "id": "club-tsg-1899-hoffenheim",
+      "tipo": "club",
+      "valor": "TSG 1899 Hoffenheim",
+      "etiqueta": "TSG 1899 Hoffenheim"
+    },
+    {
+      "id": "club-borussia-monchengladbach",
+      "tipo": "club",
+      "valor": "Borussia Mönchengladbach",
+      "etiqueta": "Borussia Mönchengladbach"
+    },
+    {
+      "id": "club-sv-werder-bremen",
+      "tipo": "club",
+      "valor": "SV Werder Bremen",
+      "etiqueta": "SV Werder Bremen"
+    },
+    {
+      "id": "club-1-fsv-mainz-05",
+      "tipo": "club",
+      "valor": "1.FSV Mainz 05",
+      "etiqueta": "1.FSV Mainz 05"
+    },
+    {
+      "id": "club-fc-augsburg",
+      "tipo": "club",
+      "valor": "FC Augsburg",
+      "etiqueta": "FC Augsburg"
+    },
+    {
+      "id": "club-vfl-wolfsburg",
+      "tipo": "club",
+      "valor": "VfL Wolfsburg",
+      "etiqueta": "VfL Wolfsburg"
+    },
+    {
+      "id": "club-1-fc-union-berlin",
+      "tipo": "club",
+      "valor": "1.FC Union Berlin",
+      "etiqueta": "1.FC Union Berlin"
+    },
+    {
+      "id": "club-vfl-bochum",
+      "tipo": "club",
+      "valor": "VfL Bochum",
+      "etiqueta": "VfL Bochum"
+    },
+    {
+      "id": "club-fc-st-pauli",
+      "tipo": "club",
+      "valor": "FC St. Pauli",
+      "etiqueta": "FC St. Pauli"
+    },
+    {
+      "id": "club-holstein-kiel",
+      "tipo": "club",
+      "valor": "Holstein Kiel",
+      "etiqueta": "Holstein Kiel"
+    },
+    {
+      "id": "club-1-fc-heidenheim",
+      "tipo": "club",
+      "valor": "1.FC Heidenheim",
+      "etiqueta": "1.FC Heidenheim"
+    },
+    {
+      "id": "club-paris-saint-germain",
+      "tipo": "club",
+      "valor": "Paris Saint-Germain",
+      "etiqueta": "Paris Saint-Germain"
+    },
+    {
+      "id": "club-olympique-marseille",
+      "tipo": "club",
+      "valor": "Olympique Marseille",
+      "etiqueta": "Olympique Marseille"
+    },
+    {
+      "id": "club-olympique-lyon",
+      "tipo": "club",
+      "valor": "Olympique Lyon",
+      "etiqueta": "Olympique Lyon"
+    },
+    {
+      "id": "club-as-monaco",
+      "tipo": "club",
+      "valor": "AS Monaco",
+      "etiqueta": "AS Monaco"
+    },
+    {
+      "id": "club-losc-lille",
+      "tipo": "club",
+      "valor": "LOSC Lille",
+      "etiqueta": "LOSC Lille"
+    },
+    {
+      "id": "club-ogc-nice",
+      "tipo": "club",
+      "valor": "OGC Nice",
+      "etiqueta": "OGC Nice"
+    },
+    {
+      "id": "club-stade-rennais-fc",
+      "tipo": "club",
+      "valor": "Stade Rennais FC",
+      "etiqueta": "Stade Rennais FC"
+    },
+    {
+      "id": "club-rc-lens",
+      "tipo": "club",
+      "valor": "RC Lens",
+      "etiqueta": "RC Lens"
+    },
+    {
+      "id": "club-rc-strasbourg-alsace",
+      "tipo": "club",
+      "valor": "RC Strasbourg Alsace",
+      "etiqueta": "RC Strasbourg Alsace"
+    },
+    {
+      "id": "club-fc-toulouse",
+      "tipo": "club",
+      "valor": "FC Toulouse",
+      "etiqueta": "FC Toulouse"
+    },
+    {
+      "id": "club-montpellier-hsc",
+      "tipo": "club",
+      "valor": "Montpellier HSC",
+      "etiqueta": "Montpellier HSC"
+    },
+    {
+      "id": "club-fc-nantes",
+      "tipo": "club",
+      "valor": "FC Nantes",
+      "etiqueta": "FC Nantes"
+    },
+    {
+      "id": "club-le-havre-ac",
+      "tipo": "club",
+      "valor": "Le Havre AC",
+      "etiqueta": "Le Havre AC"
+    },
+    {
+      "id": "club-stade-reims",
+      "tipo": "club",
+      "valor": "Stade Reims",
+      "etiqueta": "Stade Reims"
+    },
+    {
+      "id": "club-aj-auxerre",
+      "tipo": "club",
+      "valor": "AJ Auxerre",
+      "etiqueta": "AJ Auxerre"
+    },
+    {
+      "id": "club-angers-sco",
+      "tipo": "club",
+      "valor": "Angers SCO",
+      "etiqueta": "Angers SCO"
+    },
+    {
+      "id": "club-stade-brestois-29",
+      "tipo": "club",
+      "valor": "Stade Brestois 29",
+      "etiqueta": "Stade Brestois 29"
+    },
+    {
+      "id": "club-fc-metz",
+      "tipo": "club",
+      "valor": "FC Metz",
+      "etiqueta": "FC Metz"
+    },
+    {
+      "id": "club-ca-boca-juniors",
+      "tipo": "club",
+      "valor": "CA Boca Juniors",
+      "etiqueta": "CA Boca Juniors"
+    },
+    {
+      "id": "club-ca-river-plate",
+      "tipo": "club",
+      "valor": "CA River Plate",
+      "etiqueta": "CA River Plate"
+    },
+    {
+      "id": "club-fc-porto",
+      "tipo": "club",
+      "valor": "FC Porto",
+      "etiqueta": "FC Porto"
+    },
+    {
+      "id": "club-sl-benfica",
+      "tipo": "club",
+      "valor": "SL Benfica",
+      "etiqueta": "SL Benfica"
+    },
+    {
+      "id": "club-sporting-cp",
+      "tipo": "club",
+      "valor": "Sporting CP",
+      "etiqueta": "Sporting CP"
+    }
+  ]
+}
