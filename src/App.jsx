@@ -2,6 +2,11 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import datosRaw from './data/jugadores.json';
 import requisitosRaw from './data/requisitos.json';
 
+// Importamos los nuevos módulos limpios
+import { PantallaInicio } from './components/PantallaInicio';
+import { Marcador } from './components/Marcador';
+import { ModalBusqueda } from './components/ModalBusqueda';
+
 const TIEMPO_POR_TURNO = 60;
 
 function cumpleRequisito(jugador, req) {
@@ -34,6 +39,7 @@ export default function App() {
   const [cronometroActivo, setCronometroActivo] = useState(true);
   const [celdaActiva, setCeldaActiva] = useState(null);
   const [busqueda, setBusqueda] = useState('');
+  const [mensajeError, setMensajeError] = useState('');
   const [marcador, setMarcador] = useState({ 1: 0, 2: 0 });
   const [resultado, setResultado] = useState(null);
   const [filas, setFilas] = useState([]);
@@ -138,138 +144,147 @@ export default function App() {
   const validarJugador = (jugador) => {
     const { f, c } = celdaActiva;
     const reqFila = filas[f]; const reqCol = columnas[c];
-    const cumpleFila = cumpleRequisito(jugador, reqFila);
-    const cumpleCol = cumpleRequisito(jugador, reqCol);
-
-    if (cumpleFila && cumpleCol) {
+    
+    if (cumpleRequisito(jugador, reqFila) && cumpleRequisito(jugador, reqCol)) {
       const nuevoTablero = tablero.map(row => [...row]);
       nuevoTablero[f][c] = { nombre: jugador.nombre, jugador: jugadorActual };
       setTablero(nuevoTablero);
       setMarcador(prev => ({ ...prev, [jugadorActual]: prev[jugadorActual] + 1 }));
+      setMensajeError(''); // Limpiamos el error si acierta
       reiniciarTurno(jugadorActual === 1 ? 2 : 1);
     } else {
-      alert('El jugador no cumple ambas condiciones.');
+      setMensajeError('El jugador no cumple ambas condiciones');
+      setCeldaActiva(null); // Cerramos el buscador para que vea el mensaje
+      
+      // Borramos el mensaje de error automáticamente después de 3 segundos
+      setTimeout(() => setMensajeError(''), 3000);
     }
   };
 
   const nombreActual = jugadorActual === 1 ? nombreJ1 : nombreJ2;
 
-  // ESTILOS ESTÉTICOS (Basados en tu imagen de referencia)
-  const inputContainerStyle = "flex items-center gap-4 mb-8 border-b border-gray-400 pb-3";
-  const inputStyle = "flex-1 bg-transparent text-gray-200 placeholder-gray-500 focus:outline-none font-light text-lg";
-  const btnStyle = "w-full border border-gray-400 text-gray-200 py-3 uppercase tracking-widest text-sm font-semibold hover:bg-gray-200 hover:text-black transition-colors duration-300";
-
+  // Fase 1: Pantalla de inicio modularizada
   if (fase === 'inicio') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#1c1c1c] to-[#121212] flex flex-col items-center justify-center font-sans">
-        <div className="w-full max-w-md p-8">
-          <h1 className="text-3xl font-light text-gray-300 tracking-widest text-center mb-16">
-            FOOTY TIC-TAC-TOE
-          </h1>
+      <PantallaInicio 
+        nombreJ1={nombreJ1} setNombreJ1={setNombreJ1}
+        nombreJ2={nombreJ2} setNombreJ2={setNombreJ2}
+        iniciarJuego={iniciarJuego}
+      />
+    );
+  }
 
-          <div className={inputContainerStyle}>
-            <span className="text-gray-400 text-xl">✉</span>
-            <input
-              type="text"
-              placeholder="Jugador 1"
-              value={nombreJ1}
-              onChange={(e) => setNombreJ1(e.target.value)}
-              className={inputStyle}
-              autoFocus
-            />
+  // Fase 2: Pantalla de resultado
+  if (fase === 'resultado') {
+    const esEmpate = resultado === 'empate';
+    return (
+      <div className="layout-principal">
+        <div className="w-full max-w-md p-8 text-center">
+          <h2 className="text-4xl font-light tracking-widest mb-12">
+            {esEmpate ? 'EMPATE' : `${resultado === 1 ? nombreJ1 : nombreJ2} GANA`}
+          </h2>
+          <div className="flex justify-center gap-16 mb-12 font-light">
+            <div className="text-center"><p className="text-gray-400 mb-4 text-xl">{nombreJ1}</p><p className="text-6xl">{marcador[1]}</p></div>
+            <div className="text-center"><p className="text-gray-400 mb-4 text-xl">{nombreJ2}</p><p className="text-6xl">{marcador[2]}</p></div>
           </div>
-
-          <div className={inputContainerStyle}>
-            <span className="text-gray-400 text-xl">🔒</span>
-            <input
-              type="text"
-              placeholder="Jugador 2"
-              value={nombreJ2}
-              onChange={(e) => setNombreJ2(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && iniciarJuego()}
-              className={inputStyle}
-            />
-          </div>
-
-          <div className="flex justify-between items-center text-xs text-gray-400 mb-10 font-light px-1">
-             <span>✓ Modo Clásico</span>
-             <span className="italic">¿Reglas?</span>
-          </div>
-
-          <button onClick={iniciarJuego} disabled={!nombreJ1.trim() || !nombreJ2.trim()} className={`${btnStyle} disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gray-200`}>
-            JUGAR
+          <button onClick={() => { setTablero(Array(3).fill(null).map(() => Array(3).fill(null))); seleccionarTablero(); setFase('juego'); reiniciarTurno(1); }} className="btn-primario text-lg">
+            REVANCHA
           </button>
         </div>
       </div>
     );
   }
 
-  // --- LAS OTRAS PANTALLAS TAMBIÉN ADAPTADAS AL DISEÑO ---
-  if (fase === 'resultado') {
-    const esEmpate = resultado === 'empate';
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-[#1c1c1c] to-[#121212] flex flex-col items-center justify-center font-sans text-gray-200">
-        <div className="w-full max-w-md p-8 text-center">
-          <h2 className="text-3xl font-light tracking-widest mb-12">
-            {esEmpate ? 'EMPATE' : `${resultado === 1 ? nombreJ1 : nombreJ2} GANA`}
-          </h2>
-          <div className="flex justify-center gap-12 mb-12 font-light">
-            <div className="text-center"><p className="text-gray-400 mb-2">{nombreJ1}</p><p className="text-4xl">{marcador[1]}</p></div>
-            <div className="text-center"><p className="text-gray-400 mb-2">{nombreJ2}</p><p className="text-4xl">{marcador[2]}</p></div>
-          </div>
-          <button onClick={() => { setTablero(Array(3).fill(null).map(() => Array(3).fill(null))); seleccionarTablero(); setFase('juego'); reiniciarTurno(1); }} className={btnStyle}>REVANCHA</button>
-        </div>
-      </div>
-    );
-  }
-
+  // Fase 3: Pantalla Principal del Juego
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1c1c1c] to-[#121212] flex flex-col items-center justify-center font-sans text-gray-200 p-4">
-      <h1 className="text-2xl font-light text-gray-300 tracking-widest mb-8">FOOTY TIC-TAC-TOE</h1>
+    <div className="layout-principal w-full flex flex-col justify-center">
+      
+      {/* Cabecera: Quitamos el margen inferior (mb-0) y reducimos el superior (mt-1) */}
+      <div className="w-full max-w-[85rem] flex justify-between items-start px-8 mb-0 mt-1">
+        
+        {/* Marcador Jugador 1 */}
+        <div className={`text-center ${jugadorActual === 1 ? 'text-white' : 'text-gray-600'}`}>
+          <div className="text-xl uppercase tracking-widest">{nombreJ1}</div>
+          <div className="text-6xl mt-1 font-light">{marcador[1]}</div>
+        </div>
 
-      <div className="flex items-center gap-12 mb-8 font-light tracking-wider">
-        <div className={`text-center ${jugadorActual === 1 ? 'text-white' : 'text-gray-600'}`}>{nombreJ1} <span className="block text-2xl">{marcador[1]}</span></div>
-        <div className="text-amber-500 font-mono text-2xl">00:{String(tiempo).padStart(2, '0')}</div>
-        <div className={`text-center ${jugadorActual === 2 ? 'text-white' : 'text-gray-600'}`}>{nombreJ2} <span className="block text-2xl">{marcador[2]}</span></div>
+        {/* Centro: Título y Cronómetro */}
+        <div className="flex flex-col items-center">
+          <h1 className="text-sm font-light text-gray-500 tracking-widest mb-1">FOOTY TIC-TAC-TOE</h1>
+          <div className="text-white font-mono text-2xl tracking-widest">
+            00:{String(tiempo).padStart(2, '0')}
+          </div>
+        </div>
+
+        {/* Marcador Jugador 2 */}
+        <div className={`text-center ${jugadorActual === 2 ? 'text-white' : 'text-gray-600'}`}>
+          <div className="text-xl uppercase tracking-widest">{nombreJ2}</div>
+          <div className="text-6xl mt-1 font-light">{marcador[2]}</div>
+        </div>
+        
       </div>
 
-      <div className="p-1 border border-gray-700 w-full max-w-2xl mb-8">
-        <div className="grid grid-cols-4 gap-1">
-          <div className="h-20"></div>
-          {columnas.map((col, i) => <div key={i} className="flex items-center justify-center text-center text-xs tracking-wider text-gray-400 uppercase">{col.etiqueta}</div>)}
+      {/* Mensaje de error: Reducimos la altura de h-8 a h-5, achicamos un poco el texto y quitamos márgenes */}
+      <div className="h-5 flex items-center justify-center mb-0">
+        {mensajeError && (
+          <p className="text-red-500 font-semibold tracking-widest uppercase text-xs animate-pulse">
+            {mensajeError}
+          </p>
+        )}
+      </div>
+
+      {/* Contenedor de la grilla compactado hacia arriba */}
+      <div className="w-full mb-0" style={{ width: '100%', maxWidth: '56rem' }}>
+        <div className="grid gap-1" style={{ display: 'grid', gridTemplateColumns: '10rem repeat(3, minmax(0, 1fr)) 10rem', gap: '0.25rem' }}>
+          
+          <div></div>
+          
+          {columnas.map((col, i) => (
+            <div key={i} className="flex items-end justify-center text-center tracking-wider text-gray-400 uppercase pb-2 px-2" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', textAlign: 'center', fontSize: '0.85rem', letterSpacing: '0.05em', color: '#9ca3af', textTransform: 'uppercase', paddingBottom: '0.5rem' }}>
+              {col.etiqueta}
+            </div>
+          ))}
+          
+          <div></div>
+          
           {filas.map((fila, fIndex) => (
             <React.Fragment key={fIndex}>
-              <div className="flex items-center justify-center text-center text-xs tracking-wider text-gray-400 uppercase">{fila.etiqueta}</div>
+              <div className="flex items-center justify-end text-right tracking-wider text-gray-400 uppercase pr-4" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', textAlign: 'right', fontSize: '0.85rem', letterSpacing: '0.05em', color: '#9ca3af', textTransform: 'uppercase', paddingRight: '1rem' }}>
+                {fila.etiqueta}
+              </div>
+              
               {columnas.map((_, cIndex) => {
                 const celda = tablero[fIndex][cIndex];
                 return (
-                  <button key={cIndex} onClick={() => { if (!celda && cronometroActivo) setCeldaActiva({f: fIndex, c: cIndex}) }} className="h-24 border border-gray-700 hover:bg-gray-800 transition flex flex-col items-center justify-center">
-                    {celda ? <span className="text-4xl font-light">{celda.jugador === 1 ? 'X' : 'O'}</span> : null}
-                    {celda && <span className="text-[9px] uppercase text-gray-500 mt-2">{celda.nombre}</span>}
+                  <button 
+                    key={cIndex} 
+                    onClick={() => { if (!celda && cronometroActivo) setCeldaActiva({f: fIndex, c: cIndex}) }} 
+                    className="celda-juego w-full"
+                    style={{ aspectRatio: '1 / 1' }} 
+                  >
+                    {celda ? <span className="font-light" style={{ fontSize: '4rem', fontWeight: 300 }}>{celda.jugador === 1 ? 'X' : 'O'}</span> : null}
+                    {celda && <span className="uppercase text-gray-400 mt-1" style={{ fontSize: '0.85rem', textTransform: 'uppercase', color: '#9ca3af', marginTop: '0.25rem' }}>
+                      {celda.nombre}
+                    </span>}
                   </button>
                 );
               })}
+              
+              <div></div>
             </React.Fragment>
           ))}
         </div>
       </div>
 
+      {/* Modal buscador */}
       {celdaActiva && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50">
-          <div className="border border-gray-600 p-8 w-full max-w-md bg-[#121212]">
-            <h2 className="text-lg font-light tracking-widest text-gray-300 mb-6 uppercase">Turno de {nombreActual}</h2>
-            <div className={inputContainerStyle}>
-               <span className="text-gray-400">🔍</span>
-               <input type="text" placeholder="Buscar jugador..." value={busqueda} onChange={(e) => setBusqueda(e.target.value)} className={inputStyle} autoFocus />
-            </div>
-            <div className="max-h-40 overflow-y-auto flex flex-col mb-6">
-              {listaFiltrada.slice(0, 15).map((j, i) => (
-                <button key={i} onClick={() => validarJugador(j)} className="text-left p-3 border-b border-gray-800 hover:bg-gray-800 text-sm text-gray-300 transition">{j.nombre}</button>
-              ))}
-            </div>
-            <button onClick={() => setCeldaActiva(null)} className={btnStyle}>CANCELAR</button>
-          </div>
-        </div>
+        <ModalBusqueda 
+          nombreActual={nombreActual}
+          busqueda={busqueda} setBusqueda={setBusqueda}
+          listaFiltrada={listaFiltrada}
+          validarJugador={validarJugador}
+          setCeldaActiva={setCeldaActiva}
+        />
       )}
     </div>
   );
